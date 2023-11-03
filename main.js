@@ -44,3 +44,23 @@ function writeToDocument(type){
     })
 
 }
+ 
+/* 
+// URL of the API you want to fetch data from
+const apiUrl = base_url;
+
+// Target the HTML element where you want to display the data
+const dataContainer = document.getElementById('data-container');
+
+// Fetch data from the API
+fetch(apiUrl)
+    .then(response => response.json()) // Parse the response as JSON
+    .then(jata => {
+        // Update the HTML element with the fetched data
+        dataContainer.innerHTML = `<p>Title: ${jata.results}</p><p>Body: ${jata.body}</p>`;
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+        dataContainer.innerHTML = 'An error occurred while fetching data.';
+    });
+*/
