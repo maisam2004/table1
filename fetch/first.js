@@ -87,5 +87,12 @@ extraLink('people/');
     }); */
 
 
+// for parctice 
+
+fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => console.log(data,'this is data '))
+    .catch(error => console.log('Error',error));
+
 
 
