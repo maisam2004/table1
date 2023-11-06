@@ -47,7 +47,7 @@ function getTableHeaders(obj) {
     var tableHeaders = [];
     Object.keys(obj).forEach(function(key){
         tableHeaders.push(`<th>${key}</th>`);
-        console.log(obj[key]);
+        
     });  
     return `<tr>${tableHeaders}</tr>`;
 }
@@ -68,9 +68,6 @@ function extraLink(link){
 
                 let listHtml= '<ol>';
                 data.results.forEach(element => {
-                    
-                    
-                    
                     tableRows.push(`<tr>${trows(element)}</tr>`);
                     tableHeaders = getTableHeaders(element);
                     listHtml += `<li>${element.name}</li>`;
