@@ -31,7 +31,7 @@ fetch(apiUrl)
 
 // Create a reusable function for making fetch requests
 function extraLink(link){
-    let url = "https://ci-swapi.herokuapp.com/api/"+link;
+    let url = "https://ci-swapi.herokuapp.com/api/"+link; // contanicate with button onclick requests
         return fetch(url)
             .then(response => {
                 if (!response.ok) {
@@ -39,7 +39,7 @@ function extraLink(link){
                 }
                 return response.json();
             })
-            .then(data => {
+            .then(data => {  // i can use this part outide whenever i call this function.
         
                 let listHtml= '<ol>';
                 data.results.forEach(element => {
