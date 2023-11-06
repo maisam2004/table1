@@ -32,8 +32,16 @@ fetch(apiUrl)
 
 
 
-// create function to iterate over elements keys add it to array
-
+// create function to iterate over elements keys add it to array for rows of table
+function trows(ele){
+    let dataRow =[];
+    Object.keys(ele).forEach(item => {
+        let rowData = ele[item].toString().substring(0,11); //change contentst to string and slice it 
+        dataRow.push(`<td>${rowData}</td>`)
+        
+    });
+        return dataRow
+}
 
 function getTableHeaders(obj) {
     var tableHeaders = [];
@@ -60,16 +68,10 @@ function extraLink(link){
 
                 let listHtml= '<ol>';
                 data.results.forEach(element => {
-                    let dataRow =[];
-                    console.log(Object.keys(element)) //get only elemnts keys 
-                    //var getTableHeaders = Object.keys(element);
-                    Object.keys(element).forEach(item => {
-                        let rowData = element[item].toString(); //change contentst to string
-                        let truncateData = rowData.substring(0,11); //slice strings
-                        dataRow.push(`<td>${truncateData}</td>`)
-                        //dataRow.push(`<td>${element[item]}</td>`)
-                    });
-                    tableRows.push(`<tr>${dataRow}</tr>`);
+                    
+                    
+                    
+                    tableRows.push(`<tr>${trows(element)}</tr>`);
                     tableHeaders = getTableHeaders(element);
                     listHtml += `<li>${element.name}</li>`;
                 })
