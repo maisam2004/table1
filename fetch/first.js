@@ -68,8 +68,8 @@ function extraLink(link){
 
                 let listHtml= '<ol>';
                 data.results.forEach(element => {
-                    tableRows.push(`<tr>${trows(element)}</tr>`);
-                    tableHeaders = getTableHeaders(element);
+                    tableRows.push(`<tr>${trows(element)}</tr>`);//use trows function for adding dataRows to table rows array
+                    tableHeaders = getTableHeaders(element);//use function to getTableHeaders tor retuen headers
                     listHtml += `<li>${element.name}</li>`;
                 })
                 listHtml += '</ol>';
