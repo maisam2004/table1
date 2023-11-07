@@ -29,15 +29,7 @@ fetch(apiUrl)
         dataContainer.innerHTML = 'An error occured while fetching data.';
     });
 
-/* function generateButton(next,prev){
-    if(next && prev){
-        return `<button type="button" onclick="extraLink('${prev}');">previous</button><button type="button" onclick="extraLink('${next}');">next</button>`
-    }else if(next && !prev){
-        return `<button type="button" onclick="extraLink('${next}');">previous</button>`
-    }else if(!next && prev){
-        return `<button type="button" onclick="extraLink('${prev}');">next</button>`
-    }
-} */
+
 // functino to generat next and previous buttons
 
   function generateButton1(link) {
@@ -104,7 +96,7 @@ function getTableHeaders(obj) {
                 listHtml += '</ol>';
                 document.getElementById('sp').innerHTML = listHtml;
 
-                tables.innerHTML =`<table>${tableHeaders}${tableRows}</table> ${pages_next_prev }` ;
+                tables.innerHTML =`<table>${tableHeaders}${tableRows}</table> ${pages_next_prev }`.replace(/,/g,'-') ;
 
             })
             .catch(error =>{
@@ -113,68 +105,12 @@ function getTableHeaders(obj) {
         
     }
 
-// Create a reusable function for making fetch requests
-/* function extraLink(link) {
-    let tableRows = [];
-    let tableHeaders;
-    let pages_next_prev;
-    let url = "https://ci-swapi.herokuapp.com/api/" + link;
-  
-    return fetch(url)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        pages_next_prev = generateButton(data.next, data.previous);
-  
-        // The rest of your code to process data, create the table, and display the result
-        let listHtml = '<ol>';
-        data.results.forEach((element) => {
-          tableRows.push(`<tr>${trows(element)}</tr>`);
-          tableHeaders = getTableHeaders(element);
-          listHtml += `<li>${element.name}</li>`;
-        });
-        listHtml += '</ol';
-        document.getElementById('sp').innerHTML = listHtml;
-        tables.innerHTML = `<table>${tableHeaders}${tableRows}</table> ${pages_next_prev}`;
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  } */
+
   
 const specific = document.getElementById('sp') ;
 const tables = document.getElementById('table') ;
 
-/* 
-extraLink('people/');
-    .then(data => {
-        
-        let listHtml= '<ol>';
-        data.results.forEach(element => {
-            
-            listHtml += `<li>${element.name}</li>`;
-        })
-        listHtml += '</ol>';
-        specific.innerHTML = listHtml;
-        
-    }); */
 
- /*
- extraLink('planets/')
-   .then(data => {
-        
-        let listHtml= '<ol>';
-        data.results.forEach(element => {
-            listHtml += `<li>${element.name}</li>`;
-        })
-        listHtml += '</ol>';
-        planets.innerHTML = listHtml;
-        
-    }); */
 
 
 // for parctice 
